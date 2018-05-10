@@ -79,13 +79,11 @@ var chartSvg,
       .on({
           "mouseover": function() { /* do stuff */ },
           "mouseout":  function() { /* do stuff */ }, 
-          "click":  function(d) { alert(d.a.substring(2)) }, 
+          "click":  function(d) { location.replace("ticker.php/"+d.a.substring(2)) }, 
         });     
   
     heatMap.transition().duration(1000)
       .style("fill", function(d) { return colorScale(d.b); });
-
-
     var labels = g.selectAll("text")
       .data(data)
       .enter().append("text")
@@ -131,7 +129,6 @@ var chartSvg,
       .text(function(d, i) { 
 
         var msg ="";
-        alert(colors[i]);
         if(colors[i]=='#0a3c21'){
             msg = "Buy";
         }else if(colors[i]=='#766965'){
