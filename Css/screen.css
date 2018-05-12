@@ -1,21 +1,57 @@
 /* CSS Document for Screens */
 
 *{
-
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 
 body{
  font-size: 7px;
 }
+#container{
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+header, #headersupport{background:#0a3c21;height: 60px;}
+
+#headersupport h1{
+  text-align: center;
+  color: #fff;
+  font-size:4em;
+  padding: 1%;
+}
+#SecEnv{
+  width: 100%;
+  background:violet;
+}
+#SecEnv h1{
+  font-size:4em;
+  padding: 1%;
+  padding-bottom: 0;
+}
+#SecEnv h2{
+  font-size:3em;
+  padding:  1%;
+  padding-top: 0;
+  padding-bottom:  0;
+}
+#desc{
+  font-size: 1.75em;
+}
+
+#desc p{
+  padding: 1%;
+  /* padding-top:  0; */
+}
+/* fix me 
 text{
   font-size: 7px;
 }
+*/
 
-#container{
-
-
-}
 #svg-container{
 	/* background: black; */
 }
@@ -44,14 +80,14 @@ rect.legend:hover {
   stroke-width: 0.5px;
 }
 
-#wrapper {
+#chart {
     position: relative;
     height: 0;
     width: 100%;
     padding: 0;
     padding-bottom: 100%;
 }
-#wrapper > svg {
+#chart > svg {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -60,4 +96,20 @@ rect.legend:hover {
 }
 .dot {
     fill: #10c1ac;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #headersupport h1{
+      padding-top: 2%;
+      padding-bottom:0;
+    }
+    #SecEnv h1,h2{
+      text-align:center;
+    }
+    #desc p{
+      padding: 1.5%;
+      padding-top:  0;
+      padding-left: 2%;
+    }
 }

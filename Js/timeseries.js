@@ -1,8 +1,11 @@
+
+
 var width = 512,
     height = 512,
     margin = {top: 30, right: 30, bottom: 30, left: 30},
     totalWidth = width + margin.right + margin.left;
     totalHeight = height + margin.top + margin.bottom;
+    
     svg = d3.select("#chart")
         .attr("style", "padding-bottom: " + Math.ceil(totalWidth * 100 / totalHeight) + "%")
         .append("svg")
@@ -28,9 +31,9 @@ svg.append("g").call(d3.axisLeft(y))
     .attr("dy", "1em")
     .attr("text-anchor", "end")
     .text("Recall");
-    
+
 var spaceDsvParser = d3.dsvFormat(',');
-d3.request('data/omg.csv')
+d3.request('data/ticker.csv')
     .response(function(xhr) { return spaceDsvParser.parse(xhr.responseText); })
     .get(function(error, data) {
         if (error) throw error;
@@ -47,3 +50,7 @@ d3.request('data/omg.csv')
             .attr("cy", function(d) { return y((d.f)); })
             .style("fill", "#10c1ac");
     });
+
+
+
+
