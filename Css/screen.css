@@ -46,6 +46,20 @@ header, #headersupport{background:#0a3c21;height: 60px;}
   padding: 1%;
   /* padding-top:  0; */
 }
+#finfo{
+
+}
+#ratios{
+  width: 50%;
+  float: left;
+}
+#chart{
+  width: 50%;
+  float: right;
+}
+#PeRatio{
+  background: #969696;
+}
 /* fix me 
 text{
   font-size: 7px;
@@ -83,7 +97,7 @@ rect.legend:hover {
 #chart {
     position: relative;
     height: 0;
-    width: 100%;
+    width: 50%;
     padding: 0;
     padding-bottom: 100%;
 }

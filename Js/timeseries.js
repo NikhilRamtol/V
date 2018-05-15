@@ -1,7 +1,7 @@
 
 
-var width = 512,
-    height = 512,
+var width = 250,
+    height = 250,
     margin = {top: 30, right: 30, bottom: 30, left: 30},
     totalWidth = width + margin.right + margin.left;
     totalHeight = height + margin.top + margin.bottom;

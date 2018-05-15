@@ -6,8 +6,8 @@
 		<meta http-equiv="Cache-control" content="no-cache">
 		<link rel="stylesheet" type="text/css" href="Css/screen.css">
 		<!--<link rel="stylesheet" href="Css/bootstrap.min.css"> 
-		<script src="Js/bootstrap.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+		<script src="Js/bootstrap.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 
   		<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -51,7 +51,7 @@
 			<div id="finfo">
 				<div id="ratios">
 					<div id="PeRatio">
-						<svg width="480" height="250"></svg>-
+						<!--<svg width="480" height="250"></svg>-->
 					</div>
 					<div id="EPsRatio"></div>
 					<div id="DebtEquity"></div>
