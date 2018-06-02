@@ -3,13 +3,13 @@
 var width = 250,
     height = 250,
     margin = {top: 30, right: 30, bottom: 30, left: 30},
-    totalWidth = width + margin.right + margin.left;
-    totalHeight = height + margin.top + margin.bottom;
+    totalWidth = 400;
+    totalHeight = 400;
     
     svg = d3.select("#chart")
         .attr("style", "padding-bottom: " + Math.ceil(totalWidth * 100 / totalHeight) + "%")
         .append("svg")
-        .attr("viewBox", (-margin.left) + " " + (-margin.top) + " " + totalWidth + " " + totalHeight);
+        .attr("viewBox", 0 + " " + 0 + " " + totalWidth + " " + totalHeight);
 
 var x = d3.scaleLinear().rangeRound([0, width]);
 var y = d3.scaleLinear().rangeRound([height, 0]);
@@ -46,8 +46,8 @@ d3.request('data/ticker.csv')
             .enter().append("circle")
             .attr("class", "dot")
             .attr("r", 1)
-            .attr("cx", function(d) { return x((d.e)); })
-            .attr("cy", function(d) { return y((d.f)); })
+            .attr("cx", function(d) { return x((d.Volume)); })
+            .attr("cy", function(d) { return y((d.High)); })
             .style("fill", "#10c1ac");
     });
 

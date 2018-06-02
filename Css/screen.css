@@ -15,17 +15,17 @@ body{
   height: 100%;
   color: #000;
 }
-header, #headersupport{background:#0a3c21;height: 60px;}
+header, #headersupport{background:#306596;height: 100px;}
 
 #headersupport h1{
   text-align: center;
   color: #fff;
-  font-size:4em;
+  font-size: 5em;
   padding: 1%;
+  padding-top: 2%;
 }
 #SecEnv{
   width: 100%;
-  background:violet;
 }
 #SecEnv h1{
   font-size:4em;
@@ -44,21 +44,47 @@ header, #headersupport{background:#0a3c21;height: 60px;}
 
 #desc p{
   padding: 1%;
+  font-size: 2.2em;
   /* padding-top:  0; */
 }
-#finfo{
+#HomeContent{
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    font-family: 'Roboto','Heebo',Arial,sans-serif;
+    /* max-width: 1248px; */
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+    /* justify-content: center; */
+}
+#ActiveContent {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    padding: 38px 0 0; 
+}/*
+ #HomeContent, #finfosupport{
+    display: flex;
+}
+*/
+
+#ratios{
 
 }
-#ratios{
-  width: 50%;
-  float: left;
-}
 #chart{
-  width: 50%;
-  float: right;
+
 }
 #PeRatio{
-  background: #969696;
+  /* background: #969696; */
 }
 /* fix me 
 text{
@@ -93,27 +119,48 @@ rect.legend:hover {
   stroke: #969696;
   stroke-width: 0.5px;
 }
-
+/*
 #chart {
     position: relative;
-    height: 0;
-    width: 50%;
+    /* height: 0; */
+   /* width: 50%;
     padding: 0;
     padding-bottom: 100%;
 }
 #chart > svg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
+    /* position: absolute; */
+    /* height: 100%; */
+    /* width: 100%; 
+     left: 0; 
+     top: 0; 
+}*/
 .dot {
     fill: #10c1ac;
 }
-
+#Managmentinfo{
+  background-color: #306596;
+}
+#Managmentinfo h1{
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+  padding: 1%;
+}
+#Managmentinfocontainer {
+  display: flex;
+  justify-content: center;
+}
+#Managmentinfocontainer > div{
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
 
 @media only screen and (max-width: 1000px) {
+    
     #headersupport h1{
       padding-top: 2%;
       padding-bottom:0;
@@ -126,4 +173,24 @@ rect.legend:hover {
       padding-top:  0;
       padding-left: 2%;
     }
+}
+@media screen and (min-width: 776px){
+#HomeContent{
+  padding: 0px 48px;
+}
+#finfosupport{
+      -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
+#ratios,#encasechart{width: calc(50% - 0px);}
+
 }

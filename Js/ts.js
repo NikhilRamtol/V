@@ -1,49 +1,66 @@
-var width = 512,
-    height = 512,
-    margin = {top: 30, right: 30, bottom: 30, left: 30},
-    totalWidth = width + margin.right + margin.left;
-    totalHeight = height + margin.top + margin.bottom;
-    svg = d3.select("#chart")
-        .attr("style", "padding-bottom: " + Math.ceil(totalWidth * 100 / totalHeight) + "%")
-        .append("svg")
-        .attr("viewBox", (-margin.left) + " " + (-margin.top) + " " + totalWidth + " " + totalHeight);
+var timeseries,
+  width = 1000,
+  height = 700,
+  ratio = .70;
 
-var x = d3.scaleLinear().rangeRound([0, width]);
-var y = d3.scaleLinear().rangeRound([height, 0]);
+var margin = { top: 20, right: 20, bottom: 30, left: 50},
+    viewBoxWidth= width + margin.left + margin.right,
+    viewBoxHeight = height + margin.top + margin.bottom,
+    chartWidth = $("#timeseries").width();
+    chartHeight = chartWidth * ratio;
 
-svg.append("g").attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x))
+var parseTime = d3.timeParse("%d/%m/%y");
+
+var x = d3.scaleTime()
+    .rangeRound([0, width]);
+
+var y = d3.scaleLinear()
+    .rangeRound([height, 0]);
+
+var line = d3.line()
+    .x(function(d) { return x(d.Date); })
+    .y(function(d) { return y(d.Close); });
+
+d3.csv('data/ticker.csv', function(d) {
+  d.Date = parseTime(d.Date);
+  d.Close = +d.Close;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+   timeseries = d3.select("#timeseries").append("svg")
+      .attr("viewBox", "-70 0 " + (viewBoxWidth + margin.left + margin.right) + " " + (viewBoxHeight + margin.top + margin.bottom))
+      .attr("preserveAspectRatio", "xMidYMid")
+      .attr("width", chartWidth)
+      .attr("height", chartHeight);
+
+          g = timeseries.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  x.domain(d3.extent(data, function(d) { return d.Date; }));
+  y.domain(d3.extent(data, function(d) { return d.Close; }));
+
+  g.append("g")
+      .attr("transform", "translate(0," + (height+15) + ")")
+      .call(d3.axisBottom(x))
+   
+
+  g.append("g")
+      .call(d3.axisLeft(y))
     .append("text")
-    .attr("fill", "#000")
-    .attr("class", "label")
-    .attr("x", width)
-    .attr("y", -6)
-    .style("text-anchor", "end")
-    .text("Precission");
-svg.append("g").call(d3.axisLeft(y))
-    .append("text")
-    .attr("fill", "#000")
-    .attr("transform", "rotate(-90)")
-    .attr("y", 6)
-    .attr("dy", "1em")
-    .attr("text-anchor", "end")
-    .text("Recall");
-    
-var spaceDsvParser = d3.dsvFormat(',');
-d3.request('data/omg.csv')
-    .response(function(xhr) { return spaceDsvParser.parse(xhr.responseText); })
-    .get(function(error, data) {
-        if (error) throw error;
+      .attr("fill", "#000")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "2em")
+      .attr("text-anchor", "end")
+      .text("Price ($)");
 
-        x.domain([0, 1]);
-        y.domain([0, 1]);
+  
+});
 
-        svg.selectAll(".dot")
-            .data(data)
-            .enter().append("circle")
-            .attr("class", "dot")
-            .attr("r", 1)
-            .attr("cx", function(d) { return x((d.e)); })
-            .attr("cy", function(d) { return y((d.f)); })
-            .style("fill", "#10c1ac");
-    });
+
+
+$(window).resize(function() {
+  var chartWidth = $("#timeseries").width();
+  timeseries.attr("width", chartWidth);
+  timeseries.attr("height", chartWidth * ratio);
+});
