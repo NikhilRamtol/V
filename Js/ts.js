@@ -24,20 +24,21 @@ var line = d3.line()
 d3.csv('data/ticker.csv', function(d) {
   d.Date = parseTime(d.Date);
   d.Close = +d.Close;
+
   return d;
 }, function(error, data) {
   if (error) throw error;
-
    timeseries = d3.select("#timeseries").append("svg")
       .attr("viewBox", "-70 0 " + (viewBoxWidth + margin.left + margin.right) + " " + (viewBoxHeight + margin.top + margin.bottom))
       .attr("preserveAspectRatio", "xMidYMid")
       .attr("width", chartWidth)
       .attr("height", chartHeight);
 
-          g = timeseries.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  g = timeseries.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   x.domain(d3.extent(data, function(d) { return d.Date; }));
   y.domain(d3.extent(data, function(d) { return d.Close; }));
+
 
   g.append("g")
       .attr("transform", "translate(0," + (height+15) + ")")
@@ -53,6 +54,16 @@ d3.csv('data/ticker.csv', function(d) {
       .attr("dy", "2em")
       .attr("text-anchor", "end")
       .text("Price ($)");
+
+
+       g.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", 1.5)
+      .attr("d", line);
 
   
 });

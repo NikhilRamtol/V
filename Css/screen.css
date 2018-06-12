@@ -48,6 +48,7 @@ header, #headersupport{background:#306596;height: 100px;}
   /* padding-top:  0; */
 }
 #HomeContent{
+  background-color: rgb(245,245,245);
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;
@@ -83,9 +84,28 @@ header, #headersupport{background:#306596;height: 100px;}
 #chart{
 
 }
-#PeRatio{
-  /* background: #969696; */
+table{
+  margin-top: 1%;
+  font-size: 3em;
+  border-collapse: collapse;
+  width: 50%;
 }
+td{
+  border: 1px solid #D4D4D4;
+  text-align:  center;
+}
+#PeRatioBody h1{
+  font-size: 4em;
+}
+#PeRatio{
+      position: relative;
+      width: calc(60% - 0px);
+      left: 52%;
+      margin-top: -15%;
+      top:-50%;
+}
+
+
 /* fix me 
 text{
   font-size: 7px;

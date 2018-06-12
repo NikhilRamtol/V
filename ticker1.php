@@ -12,6 +12,7 @@
 
   		<script src="https://d3js.org/d3.v4.min.js"></script>
   		<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  		<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
     	<style type="text/css">
     		#timeseries text{
@@ -26,10 +27,8 @@
 			.bar:hover {
   				fill: brown;
 			}
+			
 
-			.axis--x path {
-  				display: none;
-  			}
     	</style>
 		<title>Ticker</title>
 </head>
@@ -48,18 +47,49 @@
 		<div id="HomeContent">
 			<div id="ActiveContent">
 				<div id="ratios">
-					<div id="PeRatio">
-					
-					</div>
-					<div id="PeRatio">
-					</div>
+					<div id="PeRatioBody">
+						<h1>Pe Ratio</h1>
+						<table>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+							</tbody>
+						</table>
+						<div id="PeRatio">
+						
+						</div>
 
+					</div>
+						<div id="PeRatioBody">
+						<h1>Pe Ratio</h1>
+						<table>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+							</tbody>
+						</table>
+						<div id="PeRatio">
+						
+						</div>
+
+					</div>
 				</div>
 				<div id="encasechart">
 					<div id="timeseries"></div>
 				</div>
 			</div>
 		</div>
+		<!--
 		<div id="Managmentinfo">
 			<h1>Managment Info</h1>
 			<div id="Managmentinfocontainer">
@@ -69,14 +99,16 @@
 			</div>
 		</div>
 		
-						
+			-->			
 					
 		
 			
 	
 	</div>
 		<script src="Js/Ratio.js"></script>
+
 		<script src="Js/ts.js"></script>
+	
 
 
 </body>
