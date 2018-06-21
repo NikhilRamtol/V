@@ -1,3 +1,0 @@
-# V
-
-Welcome to V

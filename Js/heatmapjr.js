@@ -80,8 +80,8 @@ var chartSvg,
       .on({
           "mouseover": function() { /* do stuff */ },
           "mouseout":  function() { /* do stuff */ }, 
-          "click":  function(d) { location.replace("ticker.php/"+d.a.substring(2)) }, 
-        });     
+          "click":  function(d) { location.replace("ticker.php") }, 
+        });     //"ticker.php/"+d.a.substring(2)
   
     heatMap.transition().duration(1000)
       .style("fill", function(d) { return colorScale(d.b); });

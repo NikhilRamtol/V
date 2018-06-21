@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Cache-control" content="no-cache">
@@ -12,10 +12,11 @@
 
   		<script src="https://d3js.org/d3.v4.min.js"></script>
   		<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  		<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
     	<style type="text/css">
-    		 text{
-    			font-size: 7px;
+    		#timeseries text{
+    			font-size: 14px;
     			color: white;
     			text-align: center;
     		}
@@ -26,23 +27,102 @@
 			.bar:hover {
   				fill: brown;
 			}
+			
 
-			.axis--x path {
-  				display: none;
-  			}
     	</style>
 		<title>Ticker</title>
-	</head>
-	<body>
-		
-									<div id="PeRatio">
-	
-									</div>
-								
-			
-			
+</head>
+<body>
+	<div class="container">
+		<header id="headersupport">
+			<h1>Spark New Zealand</h1>
+		</header>
+		<div id="SecEnv">
+			<h1>Ticker Name : SPK</h1>
+			<h2>Industry : Telecommunction</h2>
+			<div id ="desc">
+				<p> Spark New Zealand Limited is a supplier of telecommunications and digital ser  vices in New Zealand. The Company operates through three segments: Spark Home, Mobile & Business; Spark Digital, and Spark Connect. The Spark Home, Mobile & Business segment provides fixed line, mobile and Internet services to consumers and the small medium business market, and includes Spark Ventures. The Spark Digital segment integrates information technology (IT) and telecommunications services to provide converged information and communications technology (ICT) solutions for clients. The Spark Connect segment includes its network and IT operations, shared business operations and servicing of wholesale and international customers. The Company provides a range of telecommunications, and ICT products and services, including local, national, international and telephone services; data networks, broadband services and Internet television; IT services and procurement; equipment sales, and installation services.</p>
+			</div>
 		</div>
+		<div id="HomeContent">
+			<div id="ActiveContent">
+				<div id="ratios">
+					<div id="PeRatioBody">
+						<h1>Pe Ratio</h1>
+						<table>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+							</tbody>
+						</table>
+						<div id="PeRatio">
+						
+						</div>
+
+					</div>
+						<div id="PeRatioBody">
+						<h1>Pe Ratio</h1>
+						<table>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+							</tbody>
+						</table>
+						<div id="PeRatio">
+						
+						</div>
+
+					</div>
+					<div id="sub">
+						<table style="margin-bottom: 2%;">
+							<tbody>
+								<th>CA</th>
+								<th>Market Cap</th>
+								<th>Yeild</th>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div id="encasechart">
+					<div id="timeseries"></div>
+				</div>
+			</div>
+		</div>
+		<div id="Managmentinfo">
+			<h1>Managment Info</h1>
+			<div id="Managmentinfocontainer">
+  				<div>1</div>
+  				<div>2</div>
+  				<div>3</div>  
+			</div>
+		</div>		
+					
+		
+			
 	
+	</div>
 		<script src="Js/Ratio.js"></script>
-	</body>
+
+		<script src="Js/ts.js"></script>
+	
+
+
+</body>
+
+
 </html>
